@@ -1,0 +1,67 @@
+{
+    "section1": {
+        "message": "Add new task.",
+        "form": {
+            "title": "Title",
+            "titlePlaceholder": "Enter task title",
+            "dueDate": "Due date",
+            "priority": "Priority",
+            "priorityChoose": "Choose",
+            "priorityHigh": "High",
+            "priorityMedium": "Medium",
+            "priorityLow": "Low",
+            "color": "Color",
+            "description": "Description",
+            "descriptionPlaceholder": "Enter task description"
+        },
+        "submitBtn": {
+            "addTask": " Add task",
+            "editTask": " Edit task",
+            "cancelEdit": " Cancel"
+        },
+        "validationAlert": "Please provide a"
+    },
+    "section2": {
+        "message": "Browse your tasks.",
+        "toggler": {
+            "pinned": "Pinned",
+            "todo": "Todo",
+            "done": "Done"
+        },
+        "form": {
+            "filter": "Filter",
+            "filterPlaceholder": "Filter your tasks",
+            "sortBy": "Sort by",
+            "sortByChoose": "Choose",
+            "sortByPriorityHigh": "Priority (High)",
+            "sortByPriorityLow": "Priority (Low)",
+            "sortByDueDateEarly": "Due date (Early)",
+            "sortByDueDateLate": "Due date (Late)"
+        },
+        "taskCounter": "Total:",
+        "taskList": {
+            "noTasks": "There are no tasks here.",
+            "notFound": "There are no tasks, that meet provided input."
+        },
+        "task": {
+            "deadline1": "left",
+            "deadline2": "day left",
+            "deadline3": "days left",
+            "deadline4": "Expired",
+            "addingDate": "Added on:",
+            "dueDate": "Due date:",
+            "done": " Done",
+            "refresh": " Refresh"
+        }
+    },
+    "toast": {
+        "message": "Success! Your task has been",
+        "added": "added",
+        "edited": "edited",
+        "removed": "removed"
+    },
+    "alert": {
+        "setDone": "Are you sure? The task will be set as done.",
+        "removeTask": "Are you sure? The task will be removed."
+    }
+}

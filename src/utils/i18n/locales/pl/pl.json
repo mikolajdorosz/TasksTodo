@@ -1,0 +1,67 @@
+{
+    "section1": {
+        "message": "Dodaj nowe zadanie.",
+        "form": {
+            "title": "Tytuł",
+            "titlePlaceholder": "Podaj tytuł zadania",
+            "dueDate": "Termin",
+            "priority": "Priorytet",
+            "priorityChoose": "Wybierz",
+            "priorityHigh": "Wysoki",
+            "priorityMedium": "Średni",
+            "priorityLow": "Niski",
+            "color": "Kolor",
+            "description": "Opis",
+            "descriptionPlaceholder": "Podaj opis zadania"
+        },
+        "submitBtn": {
+            "addTask": " Dodaj",
+            "editTask": " Edytuj",
+            "cancelEdit": " Anuluj"
+        },
+        "validationAlert": "Proszę podać"
+    },
+    "section2": {
+        "message": "Przeglądaj zadania.",
+        "toggler": {
+            "pinned": "Przypięte",
+            "todo": "Dodane",
+            "done": "Zakończone"
+        },
+        "form": {
+            "filter": "Filtr",
+            "filterPlaceholder": "Filtruj",
+            "sortBy": "Sortowanie",
+            "sortByChoose": "Wybierz",
+            "sortByPriorityHigh": "Priorytet (Wysoki)",
+            "sortByPriorityLow": "Priorytet (Niski)",
+            "sortByDueDateEarly": "Termin (Wczesny)",
+            "sortByDueDateLate": "Termin (Późny)"
+        },
+        "taskCounter": "Liczba zadań:",
+        "taskList": {
+            "noTasks": "Brak zadań do wyświetlenia.",
+            "notFound": "Żadne zadanie nie spełnia podanego kryterium."
+        },
+        "task": {
+            "deadline1": "do końca",
+            "deadline2": "dzień do końca",
+            "deadline3": "dni do końca",
+            "deadline4": "Zadanie wygasło",
+            "addingDate": "Dodane:",
+            "dueDate": "Termin:",
+            "done": " Zakończ",
+            "refresh": " Odśwież"
+        }
+    },
+    "toast": {
+        "message": "Udało się! Zadanie zostało",
+        "added": "dodane",
+        "edited": "zmienione",
+        "removed": "usunięte"
+    },
+    "alert": {
+        "setDone": "Czy jesteś pewny(a)? Status zadania zostanie zmieniony na: zakończone.",
+        "removeTask": "Czy jesteś pewny(a)? Zadanie zostanie usunięte."
+    }
+}
