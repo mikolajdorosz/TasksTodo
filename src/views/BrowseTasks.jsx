@@ -17,7 +17,7 @@ function BrowseTasks() {
                 initial="init"
                 animate="show"
                 id="section2">
-                <div className="container pt-3 pb-5 pt-lg-5 mb-3 mb-lg-5">
+                <div className="container pt-5 mb-5">
                     <h1 className="w-100 fw-bold text-center">
                         {t("section2.message")}
                     </h1>

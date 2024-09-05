@@ -17,7 +17,7 @@ function Header() {
             initial="init"
             animate="show"
             className="container-fluid py-1 px-2 py-lg-3 px-lg-4 d-flex justify-content-between align-items-center position-sticky top-0 z-2">
-            <h5 className="fw-bold m-0">
+            <h5 className="fw-bold m-0 fs-6 fs-lg-5">
                 <i className="bi bi-check-all me-2"></i>
                 TasksTodo
             </h5>

@@ -48,7 +48,7 @@ function TaskPinned({ task }) {
                         {["pin-angle-fill", "eye"].map((icon, index) => (
                             <Button
                                 key={index}
-                                className="btn-light px-3"
+                                className="btn-light px-lg-3"
                                 icon={icon}
                                 onClick={() => handleHeaderBtns(icon)}
                             />
@@ -57,7 +57,6 @@ function TaskPinned({ task }) {
                 </div>
                 <div className="card-body">
                     <h4 className="card-title fw-bold">{task.title}</h4>
-
                     <p className="card-text mt-3">{task.description}</p>
                 </div>
                 <div className="card-footer bg-white d-flex justify-content-between align-items-center border-0">
@@ -73,7 +72,7 @@ function TaskPinned({ task }) {
                         )}
                     </small>
                     <Button
-                        className={`p-2 px-4 ${
+                        className={`p-2 px-lg-4 text-nowrap ${
                             task.done ? "btn-secondary" : "btn-primary"
                         }`}
                         icon="check-lg"

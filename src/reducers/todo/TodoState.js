@@ -1,15 +1,16 @@
 import { randomHex } from "../../utils/color";
+import { loadTasksFromLocalStorage } from "../../utils/localStorage";
 // Data
 import TasksData from "../../data/TasksData";
 
 export const INITIAL_STATE = {
-    tasks: TasksData,
+    tasks: loadTasksFromLocalStorage(),
     task: {
         id: "",
         title: "",
         dueDate: { key: 0, value: "" },
         addingDate: { key: 0, value: "" },
-        priority: 0,
+        priority: "",
         color: randomHex(),
         description: "",
         pinned: false,

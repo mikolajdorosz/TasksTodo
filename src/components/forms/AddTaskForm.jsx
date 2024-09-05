@@ -63,7 +63,7 @@ function AddTaskForm() {
     };
     return (
         <form
-            className={`pt-2 pt-lg-4 ${validated ? "was-validated" : ""}`}
+            className={`pt-4 ${validated ? "was-validated" : ""}`}
             onSubmit={handleSubmit}
             noValidate>
             <FormInput
@@ -88,7 +88,7 @@ function AddTaskForm() {
                 lClassName="mt-3"
                 id="priority"
                 text={t("section1.form.priority")}
-                value={+state.task.priority}
+                value={state.task.priority}
                 onChange={handleFormInput}
                 required={true}>
                 <option
@@ -129,7 +129,7 @@ function AddTaskForm() {
             <div className="d-flex justify-content-center">
                 <Button
                     type="submit"
-                    className="mt-4 btn-primary p-3 px-5 rounded-pill"
+                    className="mt-4 btn-primary p-3 px-lg-5 rounded-pill text-nowrap"
                     id="submit"
                     icon={state.editMode ? "pencil" : "plus-lg"}
                     text={
@@ -140,7 +140,7 @@ function AddTaskForm() {
                 />
                 {state.editMode && (
                     <Button
-                        className="mt-4 ms-5 btn-danger p-3 px-5 rounded-pill"
+                        className="mt-4 ms-3 ms-lg-5 btn-danger p-3 px-lg-5 rounded-pill text-nowrap"
                         id="submit"
                         icon="x-lg"
                         text={t("section1.submitBtn.cancelEdit")}

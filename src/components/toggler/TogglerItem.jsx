@@ -13,7 +13,7 @@ function TogglerItem({ id, text, checked, onChange }) {
                 onChange={onChange}
             />
             <label
-                className="btn fw-bold fs-3 text-white border-2 rounded-pill"
+                className="btn fw-bold fs-6 fs-lg-3 px-1 px-lg-3 text-white border-2 rounded-pill"
                 htmlFor={id}>
                 {text}
             </label>

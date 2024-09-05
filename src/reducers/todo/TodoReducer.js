@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { TODO_ACTION_TYPES } from "../ActionTypes";
 import { toLocaleISOString } from "../../utils/date";
 import { INITIAL_STATE } from "./TodoState";
+import { updateLocalStorage } from "../../utils/localStorage";
 
 function TodoReducer(state, action) {
     switch (action.type) {
@@ -20,21 +21,24 @@ function TodoReducer(state, action) {
                 },
             };
         case TODO_ACTION_TYPES.ADD_TODO:
+            const newTask = {
+                ...state.task,
+                id: uuidv4(),
+                addingDate: {
+                    key: new Date().getTime(),
+                    value: toLocaleISOString(
+                        new Date().toISOString().slice(0, 16)
+                    ),
+                },
+                timeLeft: Math.max(
+                    state.task.dueDate.key - new Date().getTime(),
+                    0
+                ),
+            };
+            updateLocalStorage([newTask, ...state.tasks]);
             return {
                 ...state,
-                tasks: [
-                    {
-                        ...state.task,
-                        id: uuidv4(),
-                        addingDate: {
-                            key: new Date().getTime(),
-                            value: toLocaleISOString(
-                                new Date().toISOString().slice(0, 16)
-                            ),
-                        },
-                    },
-                    ...state.tasks,
-                ],
+                tasks: [newTask, ...state.tasks],
             };
         case TODO_ACTION_TYPES.SET_TO_EDIT:
             return {
@@ -45,26 +49,35 @@ function TodoReducer(state, action) {
                 },
                 editMode: true,
             };
-        case TODO_ACTION_TYPES.EDIT_TODO:
+        case TODO_ACTION_TYPES.EDIT_TODO: {
+            const updatedTasks = state.tasks.map((task) =>
+                task.id === state.task.id ? state.task : task
+            );
+            updateLocalStorage(updatedTasks);
             return {
                 ...state,
-                tasks: [
-                    state.task,
-                    ...state.tasks.filter((task) => task.id !== state.task.id),
-                ],
+                tasks: updatedTasks,
             };
+        }
         case TODO_ACTION_TYPES.PIN_TODO:
+            updateLocalStorage(action.payload.tasks);
             return {
                 ...state,
                 tasks: action.payload.tasks,
                 task: action.payload.task,
             };
-        case TODO_ACTION_TYPES.DELETE_TODO:
+        case TODO_ACTION_TYPES.DELETE_TODO: {
+            const updatedTasks = state.tasks.filter(
+                (task) => task.id !== state.task.id
+            );
+            updateLocalStorage(updatedTasks);
             return {
                 ...state,
-                tasks: state.tasks.filter((task) => task.id !== state.task.id),
+                tasks: updatedTasks,
             };
+        }
         case TODO_ACTION_TYPES.SET_TODO_DONE:
+            updateLocalStorage(action.payload);
             return {
                 ...state,
                 tasks: action.payload,

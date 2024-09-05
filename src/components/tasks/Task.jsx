@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { diffBetweenDates, formatDate } from "../../utils/date";
-import usePriorityLabels from "../../hooks/usePriorityLables";
 // Components
 import Button from "../common/Button";
 import Badge from "../common/Badge";
@@ -11,6 +10,8 @@ import { TODO_ACTION_TYPES } from "../../reducers/ActionTypes";
 // Context
 import TodoContext from "../../context/TodoContext";
 import ToastContext from "../../context/ToastContext";
+// Hooks
+import usePriorityLabels from "../../hooks/usePriorityLables";
 
 function Task() {
     const { showToast } = useContext(ToastContext);
@@ -86,7 +87,7 @@ function Task() {
                 }`}>
                 <div
                     className={`modal-content text-black ${
-                        expanded ? "p-5" : "p-3"
+                        expanded ? "p-lg-5" : "p-lg-3"
                     }`}>
                     <div className="modal-header d-flex justify-content-between align-items-center">
                         <Badge
@@ -96,7 +97,7 @@ function Task() {
                             {icons.map((icon) => (
                                 <Button
                                     key={icon}
-                                    className="btn-light px-3"
+                                    className="btn-light px-lg-3"
                                     icon={icon}
                                     onClick={() => handleHeaderBtns(icon)}
                                 />
@@ -134,7 +135,7 @@ function Task() {
                             </li>
                         </ul>
                     </div>
-                    <div className="modal-footer d-flex justify-content-between">
+                    <div className="modal-footer d-flex justify-content-between flex-nowrap">
                         <small>
                             <i className="bi bi-stopwatch me-1"></i>
                             {diffBetweenDates(
@@ -147,8 +148,8 @@ function Task() {
                             )}
                         </small>
                         <Button
-                            className={`btn-primary ${
-                                expanded ? "p-3 px-5" : "p-2 px-4"
+                            className={`btn-primary text-nowrap${
+                                expanded ? "p-3 px-lg-5" : "p-2 px-lg-4"
                             }`}
                             icon={
                                 state.task.done ? "arrow-clockwise" : "check-lg"
